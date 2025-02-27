@@ -9,6 +9,16 @@
 ####      1.2. ROS version:
             Kinetic / melodic
 
+## 2.Computer and Industrial PC Boot Configuration
+####      2.1. rc.local File Verification and Setup
+            Check if the rc.local file exists in the /etc/ directory:
+####      2.2. If not present, execute:
+                 sudo cp rc.local /etc  
+####      2.3. If present, insert the following content above the exit 0 line in the rc.local file, then save:
+                 sleep 2  
+                 sudo ip link set can0 type can bitrate 500000  
+                 sudo ip link set can0 up              
+
 ### 2.The subsequent section will address the process of establishing a connection between the CAN card and the system.
 ####      2.1. Chassis CAN card connection:
     Specifically, Chassis CAN-H is to be connected to CANH of the CAN card connector plug, while Chassis CAN-L is to be connected to CANL of the CAN card connector plug.
