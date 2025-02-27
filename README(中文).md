@@ -55,9 +55,36 @@
 
 ![](https://github.com/kefangkele/FR-max-ros/blob/main/images/node_print.png?raw=true)  
 
-# 二、ROS驱动包使用(请完成前面的准再进行ROS驱动)
-      
+# 二、ROS驱动包使用(请完成前面的准备再进行ROS驱动)
 
+## 1.编译
+      1.1、 打开终端，进入yhs_fr09_oc_pro文件目录。
+      1.2、 输入命令 catkin_make，等待编译完成。
+
+## 2.运行
+      2.1、打开终端，进入yhs_fr09_oc_pro文件目录，分别输入以下命令后敲回车
+            source  devel/setup.bash
+            roslaunch  yhs_can_control  yhs_can_control.launch
+
+      2.2、输出“>>open can deivce success!” 则表示打开成功。
+
+## 3、测试
+      3.1、在测试之前，建议先把车架起来，或者下发到底盘的速度很小。
+
+      3.2、打开终端，进入yhs_fr09_oc_pro文件目录，分别输入以下命令后敲回车
+            source  devel/setup.bash
+            rostopic  echo  /ctrl_fb
+
+      3.3、看到反馈的数据不断刷新，说明ROS驱动包运行正常。
+
+      3.4、下发指令控制底盘运动
+        3.4.1、打开终端，进入yhs_fr09_oc_pro文件目录，输入命令后敲回车
+            source  devel/setup.bash
+
+        3.4.2、输入以下指令后先不要敲回车
+            rostopic  pub  -r  100  /ctrl_cmd
+
+        3.4.3、后面的内容可以按tab键补全，补全之后，要输入档位、速度和转向角，注意角度的单位是度不是弧度，输入完成后敲回车，将遥控器切换到自动挡，这时候就可以看到CAN卡上的红色和蓝色灯都在闪烁，底盘开始运动。
       
       
       
