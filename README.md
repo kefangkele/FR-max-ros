@@ -7,7 +7,7 @@
 ####      1.1. System:
             Ubuntu 16.04 / Ubuntu 18.04
 ####      1.2. ROS version:
-            Kinetic / melodic
+            Kinetic / Melodic
 
 ## 2.Computer and Industrial PC Boot Configuration
 ####      2.1. rc.local File Verification and Setup

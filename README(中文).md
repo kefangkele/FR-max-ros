@@ -6,7 +6,7 @@
 ####      1.1、系统：
             Ubuntu 16.04 / Ubuntu 18.04
 ####      1.2、ROS版本：
-            Kinetic / melodic
+            Kinetic / Melodic
 
 ## 2.电脑，工控机开机设置
 ####      2.1、rc.local文件确认：
