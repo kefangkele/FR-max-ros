@@ -2,7 +2,7 @@
 
 # FR-max-ros
 
-# 一、pre-positioning：
+# 一、pre-positioning
 ## 1. Environment confirmation:
 ####      1.1. System:
             Ubuntu 16.04 / Ubuntu 18.04
