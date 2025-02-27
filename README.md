@@ -76,7 +76,7 @@
 ####      6.2. Open a new terminal, navigate to your workspace directory (e.g., catkin_ws), and execute:
             source devel/setup.bash
             OR (without entering the workspace directory):
-            source \~/catkin_ws/devel/setup.bash
+            source ~/catkin_ws/devel/setup.bash
 
 ####      6.3. Monitor topic
             rostopic echo /ctrl_fb
