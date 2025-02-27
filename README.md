@@ -61,7 +61,23 @@
 ####      4.5. The terminal prints out a successful run message:  
 ![](https://github.com/kefangkele/FR-max-ros/blob/main/images/node_print.png?raw=true)
 
+## 6. Motion Test:
+####      6.1. Before testing, it is recommended to lift the chassis or send a minimal speed command to the chassis (e.g., 0.03).
+####      6.2. Open a new terminal, navigate to your workspace directory (e.g., catkin_ws), and execute:
+            source devel/setup.bash
+            OR (without entering the workspace directory):
+            source \~/catkin_ws/devel/setup.bash
 
-      
-      
+####      6.3. Monitor topic
+            rostopic echo /ctrl_fb
+
+####      6.4. After executing step 6.3, if you see continuously updating feedback data in the terminal, the ROS driver package is functioning properly.
+####      6.5. Send motion commands to control the chassis:
+            6.5.1. Open a new terminal, navigate to your workspace directory, and set temporary environment variables:
+                        source devel/setup.bash
+                   OR (without entering the workspace directory):
+                        source \~/catkin_ws/devel/setup.bash
+####      6.5.2. Prepare the command (do not execute yet). Enter in the terminal:
+                        rostopic pub -r 100 /ctrl_cmd
+####      6.5.3. Press the Tab key to autocomplete the command. After autocompletion, input gear, speed, and steering angle (note: angle units are in degrees, not radians). Once entered, press Enter. Switch the remote controller to auto mode — the red and blue LEDs on the CAN card will blink, and the chassis will start moving.      
       
