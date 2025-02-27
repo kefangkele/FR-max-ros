@@ -9,6 +9,20 @@
 ####      1.2、ROS版本：
             Kinetic / melodic
 
+## 2.电脑，工控机开机设置
+####      2.1、rc.local文件确认：
+            查看/etc/目录下有没有 rc.local文件，如果没有 sudo cp rc.local /etc
+            如果存在rc.local文件，则在 rc.local的 exit 0上面加入 以下内容后保存。
+
+            sleep 2
+            sudo ip link set can0 type can bitrate 500000
+            sudo ip link set can0 up
+
+####      2.2、开机前CAN卡连接确认：
+            开机或者重启之前，CAN卡已经接到工控机的USB口。
+
+####      2.3、设置成功信号：
+            看到RX和TX灯亮了就表示设置成功。
 ## 2.CAN卡连接与设置
 ####      2.1、底盘CAN卡连接：
             底盘的CAN-H连接到CAN卡接插头的CANH，底盘的CAN-L连接到Can卡接插头的CANL，如下图：
