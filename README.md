@@ -10,8 +10,8 @@
 
 ### 2.The subsequent section will address the process of establishing a connection between the CAN card and the system.
 ####      2.1. Chassis CAN card connection:
-  Specifically, Chassis CAN-H is to be connected to CANH of the CAN card connector plug, while Chassis CAN-L is to be connected to CANL of the CAN card connector plug.
-  The following diagram illustrates the recommended configuration:
+    Specifically, Chassis CAN-H is to be connected to CANH of the CAN card connector plug, while Chassis CAN-L is to be connected to CANL of the CAN card connector plug.
+    The following diagram illustrates the recommended configuration:
             
 ![](https://github.com/kefangkele/FR-max-ros/blob/main/images/CAN_Connection.png?raw=true)
 
