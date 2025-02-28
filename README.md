@@ -10,14 +10,18 @@
             Kinetic / Melodic
 
 ## 2.Computer and Industrial PC Boot Configuration
-####      2.1. rc.local File Verification and Setup
+####      2.1.1. rc.local File Verification and Setup
             Check if the rc.local file exists in the /etc/ directory:
-####      2.2. If not present, execute:
+####      2.1.2. If not present, execute:
                  sudo cp rc.local /etc  
-####      2.3. If present, insert the following content above the exit 0 line in the rc.local file, then save:
+####      2.1.3. If present, insert the following content above the exit 0 line in the rc.local file, then save:
                  sleep 2  
                  sudo ip link set can0 type can bitrate 500000  
-                 sudo ip link set can0 up              
+                 sudo ip link set can0 up        
+####      2.2. Pre-Boot CAN Card Connection Verification​
+　　Ensure the CAN card is physically connected to the USB port of the industrial PC prior to system startup or reboot.      
+####      2.3. Configuration Success Indication​
+　　A successful setup is confirmed when both the RX (Receive) and TX (Transmit) indicators illuminate, validating proper communication establishment.            
 
 ### 3.The subsequent section will address the process of establishing a connection between the CAN card and the system.
 ####      3.1. Chassis CAN card connection:
@@ -76,7 +80,7 @@
 ####      6.2. Open a new terminal, navigate to your workspace directory (e.g., catkin_ws), and execute:
             source devel/setup.bash
             OR (without entering the workspace directory):
-            source ~/catkin_ws/devel/setup.bash
+            source ~/your workspace(e.g.catkin_ws)/devel/setup.bash
 
 ####      6.3. Monitor topic
             rostopic echo /ctrl_fb
@@ -86,7 +90,7 @@
             6.5.1. Open a new terminal, navigate to your workspace directory, and set temporary environment variables:
                         source devel/setup.bash
                    OR (without entering the workspace directory):
-                        source ~/catkin_ws/devel/setup.bash
+                        source ~/your workspace(e.g.catkin_ws)/devel/setup.bash
             6.5.2. Prepare the command (do not execute yet). Enter in the terminal:
                         rostopic pub -r 100 /ctrl_cmd
             6.5.3. Press the Tab key to autocomplete the command. After autocompletion, input gear, speed, and steering angle (note: angle units are in degrees, not radians). Once entered, press Enter. Switch the remote controller to auto mode — the red and blue LEDs on the CAN card will blink, and the chassis will start moving.      
